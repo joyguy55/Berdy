@@ -3,47 +3,16 @@ import style from './style.scss'
 import { connect } from 'react-redux'
 import * as actions from '../redux/actions'
 import { bindActionCreators } from 'redux'
+import ReviewText from './reviewtext.js'
 // import $ from 'jquery'
 
 class Review extends React.Component{
  constructor() {
    super()
    this.state = {
-      dummie: [
-         {
-            friend_name: 'Senor Juan',
-            friend_img: 'https://randomuser.me/api/portraits/men/77.jpg',
-            recommended: true,
-            movie_name: 'Arrival',
-            movie_img: 'http://cdn3-www.comingsoon.net/assets/uploads/gallery/arrival/arrivalposter.jpg',
-            review_text: 'I likey dis movie sooo goooooood! Mind blowing ending',
-            spoiler: false,
-            stars: 5,
-            toggleReview: false,
-         },
-         {
-            friend_name: 'Marty Mcfly',
-            friend_img: 'https://randomuser.me/api/portraits/men/68.jpg',
-            recommended: true,
-            movie_name: 'Hell or High Water',
-            movie_img: 'http://t1.gstatic.com/images?q=tbn:ANd9GcRYPGO1eXsOXccVk-YmuR5XBUsr9Cjf7PrrAdc-KngRAptlynNl',
-            review_text: 'Da bomb.com oh Yeah watchy watchy!',
-            spoiler: false,
-            stars: 4,
-            toggleReview: false,
-         },
-         {
-            friend_name: 'Carla',
-            friend_img: 'https://randomuser.me/api/portraits/women/68.jpg',
-            recommended: true,
-            movie_name: 'LA LA LAND',
-            movie_img: 'http://t2.gstatic.com/images?q=tbn:ANd9GcRhFtgdSYQ89vUMjMJal2D8H39qBCkh9ptCEoZEsafOzkeQPTu2',
-            review_text: 'Loved this movie great new take on Musicals!',
-            spoiler: true,
-            stars: 5,
-            toggleReview: false,
-         },
-      ] ,
+     review_text: '',
+     toggleclass: 'review-text-hidden',
+     index: null,
    }
  }
 
@@ -61,15 +30,16 @@ class Review extends React.Component{
       return mapped
    }
 
-// handleToggle(e){
-//    console.log(e.target.attributes.value)
-//    const targ = e.target.attributes.value
-//    this.state.dummie[targ].toggleReview = !this.state.dummie[targ].toggleReview // this is why your state should never be very big and you should always use
-//    // () => { this.setState({ toggleReview: false }) }
-// }
+handleToggle(index){
+   const dummie = this.props.Reviews.reviews
+   this.setState({
+     review_text : dummie[index].review_text,
+     index: index,
+   })
+}
 
  render(){
-    const dummie = this.state.dummie
+    const dummie = this.props.Reviews.reviews
     return(
       <div className="review-box" >
          {
@@ -100,15 +70,10 @@ class Review extends React.Component{
                         </div>
                      </div>
                      <div className={`star-container ${index}`} >
-                        {
-                           this.handleStars(obj.stars)
-                        }
-                        {
-                           this.state.toggleReview ?
-                           <i className="material-icons toggler" value={index} onClick={ this.handleToggle }>arrow_drop_up</i> :
-                           <i className="material-icons toggler" value={index} onClick={ this.handleToggle }>arrow_drop_down</i>
-                        }
+                        { this.handleStars(obj.stars) }
+                       <i className="material-icons toggler" onClick={ () => { this.handleToggle(index) } }>arrow_drop_up</i>
                      </div>
+                        { index === this.state.index ? <ReviewText text={obj.review_text} toggleclass={this.state.toggleclass}/> : null}
                   </div>
                )
             })
@@ -118,6 +83,7 @@ class Review extends React.Component{
  }
 
 }
+
 
 export default connect(
   function mapStateToProps(store){
