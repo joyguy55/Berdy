@@ -3,8 +3,7 @@ import style from './style.scss'
 import { connect } from 'react-redux'
 import * as actions from '../redux/actions/review-action.js'
 import { bindActionCreators } from 'redux'
-import ReviewText from './reviewtext.js'
-// import $ from 'jquery'
+import ReviewText from './review-text.js'
 
 class Review extends React.Component{
  constructor() {
