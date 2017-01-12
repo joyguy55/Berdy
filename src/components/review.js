@@ -32,10 +32,17 @@ class Review extends React.Component{
 
 handleToggle(index){
    const dummie = this.props.Reviews.reviews
-   this.setState({
-     review_text : dummie[index].review_text,
-     index: index,
-   })
+   if (index !== this.state.index){
+     this.setState({
+       review_text : dummie[index].review_text,
+       index: index,
+     })
+   } else {
+     this.setState({
+       review_text : dummie[index].review_text,
+       index: '',
+     })
+   }
 }
 
  render(){
@@ -71,7 +78,11 @@ handleToggle(index){
                      </div>
                      <div className={`star-container ${index}`} >
                         { this.handleStars(obj.stars) }
-                       <i className="material-icons toggler" onClick={ () => { this.handleToggle(index) } }>arrow_drop_up</i>
+                        {
+                          index === this.state.index ?
+                          <i className="material-icons toggler" onClick={ () => { this.handleToggle(index) } }>arrow_drop_up</i> :
+                          <i className="material-icons toggler" onClick={ () => { this.handleToggle(index) } }>arrow_drop_down</i>
+                        }
                      </div>
                         { index === this.state.index ? <ReviewText text={obj.review_text} toggleclass={this.state.toggleclass}/> : null}
                   </div>
