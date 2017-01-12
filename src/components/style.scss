@@ -1,0 +1,87 @@
+
+.review-box{
+ color: #ffffff;
+ background: #121212;
+ width: 320px;
+
+ .review{
+  display: flex;
+  flex-direction: column;
+  .col-div{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: row;
+   justify-content: flex-start;
+
+   .col{
+    margin: 0px 15px;
+   }
+
+   .col p{
+    font-size: 12px;
+   }
+
+   .movie-container{
+    border-radius: 50%;
+    overflow: hidden;
+    height: 50px;
+    width: 50px;
+    margin: 15px 5px;
+   }
+   .movie-img{
+    height: 75px;
+    width: 55px;
+   }
+
+   .two{
+    width: 150px;
+    .movie-name{
+     float: left;
+     margin: 0px 0px 12px 0px;
+    }
+    .bottom{
+     float: left;
+     display: flex;
+    }
+    .friend-circle{
+     border-radius: 50%;
+     height: 20px;
+     width: 20px;
+     display: inline-block;
+    }
+    .friend-name{
+     display: inline-block;
+     margin: 5px 0px 0px 20px;
+    }
+   }
+
+   .three p{
+    font-size: 10px;
+    width: 40px;
+    .add-circle{
+      font-size: 20px;
+    }
+   }
+
+   .material-icons{
+    font-size: 18px;
+   }
+  } // col-div
+
+  .star-container{
+   width: 300px;
+   margin: 0px 0px 10px 20px;
+   .stars{
+    float: left;
+    width: 25px;
+    font-size: 19px;
+   }
+   .toggler{
+     float: right;
+     margin-right: 23px;
+   }
+  }
+
+ } // review
+} // review-box
