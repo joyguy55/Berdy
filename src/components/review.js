@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './style.scss'
 import { connect } from 'react-redux'
-import * as actions from '../redux/actions'
+import * as actions from '../redux/actions/review-action.js'
 import { bindActionCreators } from 'redux'
 import ReviewText from './reviewtext.js'
 // import $ from 'jquery'
@@ -16,19 +16,19 @@ class Review extends React.Component{
    }
  }
 
-   handleStars(length) {
-      const stars = []
-      for (let i=0; i<length; i++) {
-          stars.push( <i className='material-icons stars'>star_rate</i> )
-      }
-      const mapped = stars.map( (ele, index) => {
-         return (
-            <div key={index} >{ele}</div>
-            )
-         }
-      )
-      return mapped
-   }
+ handleStars(length) {
+    const stars = []
+    for (let i=0; i<length; i++) {
+        stars.push( <i className='material-icons stars'>star_rate</i> )
+    }
+    const mapped = stars.map( (ele, index) => {
+       return (
+          <div key={index} >{ele}</div>
+          )
+       }
+    )
+    return mapped
+ }
 
 handleToggle(index){
    const dummie = this.props.Reviews.reviews
