@@ -1,5 +1,4 @@
 import React from 'react'
-import AutoComplete from 'material-ui/AutoComplete'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
 import { connect } from 'react-redux'
@@ -18,7 +17,12 @@ class ReviewForm extends React.Component {
  }
 
 render() {
- const movie_arr = this.props.Reviews.movie
+ const movie_arr = this.props.Reviews.movie.filter( (e,ind,arr)=>{
+   if ( arr[ind].vote_average > 6.8 && arr[ind].poster_path !== null ){
+    return arr[ind]
+   } else {}
+ } )
+ console.log(movie_arr)
  return(
   <div className="form-wrapper">
     <TextField
@@ -34,6 +38,8 @@ render() {
          movie_arr.map( (obj)=>{
            return(
            <img className="movie"
+                key={obj.id}
+                alt=''
                 src={`https://image.tmdb.org/t/p/w154//${obj.poster_path}`}/>
            )
          })
@@ -53,6 +59,7 @@ export default connect(
   dispatch => ( {...bindActionCreators(actions, dispatch)} )
 )(ReviewForm)
 
+// && arr[ind].poster_path !== undefined
 
 // recommended: true,
 // movie_name: 'LA LA LAND',
