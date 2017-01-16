@@ -1,0 +1,54 @@
+
+.form-wrapper{
+ max-width: 320px;
+ margin: 10px;
+ .search{
+  // margin: 20px;
+ }
+ .next{
+   padding: 5px;
+  //  margin: 20px;
+ }
+ .movies{
+    display: flex;
+    flex-direction: row;
+   .movie{
+      margin: 5px;
+   }
+ }
+} //form-wrapper
+
+.form-wrapper-two{
+   max-width: 320px;
+   margin: 20px;
+
+   .ranker{
+     margin: 0px 20px;
+     display: flex;
+     flex-direction: row;
+     .checkbox{
+       width: 10px !important;
+     }
+     .material-icons{
+       color: #FFEB3B;
+     }
+   }
+
+   .review{
+     height: 60px;
+     margin: 20px;
+   }
+   .spoiler-btn{
+     margin: 20px;
+   }
+   .btn-wrapper{
+     width: 300px;
+     .back-btn{
+      margin: 20px;
+     }
+     .submit-btn{
+      margin: 20px;
+     }
+   }
+
+} // form-wrapper-two

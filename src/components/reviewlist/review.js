@@ -1,9 +1,11 @@
 import React from 'react'
 import style from './style.scss'
 import { connect } from 'react-redux'
-import * as actions from '../redux/actions/review-action.js'
+import * as actions from '../../redux/actions/review-action.js'
 import { bindActionCreators } from 'redux'
 import ReviewText from './review-text.js'
+import RaisedButton from 'material-ui/RaisedButton'
+import { Link } from 'react-router'
 
 class Review extends React.Component{
  constructor() {
@@ -88,6 +90,7 @@ handleToggle(index){
                )
             })
          }
+        <Link to="/add"><RaisedButton className="add" fullWidth={true} label="Add Review"/></Link>
       </div>
    )
  }
