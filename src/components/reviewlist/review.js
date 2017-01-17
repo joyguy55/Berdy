@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './style.scss'
+import './style.scss'
 import { connect } from 'react-redux'
 import * as actions from '../../redux/actions/review-action.js'
 import { bindActionCreators } from 'redux'
@@ -48,55 +48,56 @@ handleToggle(index){
 
  render(){
     const dummie = this.props.Reviews.reviews
-    return(
-      <div className="review-box" >
-         {
-            dummie.map((obj, index) => {
-               return(
-                  <div key={ index } className="review">
-                      <div className="col-div">
-                        <div className="col">
-                           <div className="movie-container">
-                              <img className="movie-img" alt="" src={ obj.movie_img }/>
-                           </div>
-                        </div>
-                        <div className="col two">
-                           <h5 className="movie-name" >{ obj.movie_name }</h5>
-                           <div className="bottom">
-                              <img className="friend-circle" alt="" src={ obj.friend_img }/>
-                              <p className="friend-name" >{ obj.friend_name }</p>
-                           </div>
-                        </div>
-                        <div className="col three">
-                           <p>
-                              {
-                                 obj.recommended === true ?
-                                 <i className="material-icons add-circle">add_circle_outline</i> :
-                                 <i className="material-icons add-circle">remove_circle_outline</i>
-                              }
-                           </p>
-                        </div>
+    const movie =  this.props.Reviews.movies
+    console.log(movie)
+  return(
+    <div className="review-box" >
+      {
+        dummie.map((obj, index) => {
+           return(
+            <div key={ index } className="review">
+               <div className="col-div">
+
+                  <div className="col">
+                     <div className="movie-container">
+                        <img className="movie-img" alt="" src={ obj.movie_img }/>
                      </div>
-                     <div className={`star-container ${index}`} >
-                        { this.handleStars(obj.stars) }
-                        {
-                          index === this.state.index ?
-                          <i className="material-icons toggler" onClick={ () => { this.handleToggle(index) } }>arrow_drop_up</i> :
-                          <i className="material-icons toggler" onClick={ () => { this.handleToggle(index) } }>arrow_drop_down</i>
-                        }
-                     </div>
-                        { index === this.state.index ? <ReviewText text={obj.review_text} toggleclass={this.state.toggleclass}/> : null}
                   </div>
-               )
-            })
-         }
-        <Link to="/add"><RaisedButton className="add" fullWidth={true} label="Add Review"/></Link>
-      </div>
-   )
- }
+
+                  <div className="col two">
+                     <h5 className="movie-name" >{ obj.movie_name }</h5>
+                     <p>{ obj.movie_name }</p>
+                     <p>{ obj.movie_name }</p>
+                  </div>
+
+                </div>
+              </div>
+            )
+        })
+      }
+      <Link to="/add"> <RaisedButton className="add-btn" backgroundColor="#00E676" label="Add Review"/> </Link>
+    </div>
+  )}
 
 }
 
+// {
+//   dummie.map((obj, index) => {
+//     return(
+//         <div>
+//            <div className={`star-container ${index}`} >
+//               { this.handleStars(obj.stars) }
+//               {
+//                 index === this.state.index ?
+//                 <i className="material-icons toggler" onClick={ () => { this.handleToggle(index) } }>arrow_drop_up</i> :
+//                 <i className="material-icons toggler" onClick={ () => { this.handleToggle(index) } }>arrow_drop_down</i>
+//               }
+//            </div>
+//            { index === this.state.index ? <ReviewText text={obj.review_text} toggleclass={this.state.toggleclass}/> : null }
+//         </div>
+//      )
+//   })
+// }
 
 export default connect(
   function mapStateToProps(store){

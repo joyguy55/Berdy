@@ -23,19 +23,18 @@ handleMovieClick(ind){
 }
 
 render() {
+
  const movie_arr = this.props.Reviews.movie.filter( (e,ind,arr)=>{
-   if ( arr[ind].vote_average > 6.8 && arr[ind].poster_path !== null ){
+   if ( arr[ind].vote_average > 6 && arr[ind].poster_path !== null ){
     return arr[ind]
    } else {}
  } )
- console.log(this.state.movieSelection)
+ console.log(movie_arr)
  return(
   <div className="form-wrapper">
     <TextField
        className="search"
        hintText="Find a Movie"
-       dataSource={this.state.dataSource}
-       onUpdateInput={this.handleUpdateInput}
        fullWidth={true}
        onChange={ (e,newValue)=>{ this.props.searchApi(newValue) } }
      />
@@ -47,7 +46,7 @@ render() {
                 key={obj.id}
                 alt=''
                 src={`https://image.tmdb.org/t/p/w154//${obj.poster_path}`}
-                onClick={ (e)=>{console.log(e.target.index),this.handleMovieClick(ind)} }
+                onClick={ (e)=>{this.handleMovieClick(ind)} }
                 />
            )
          })
@@ -70,12 +69,3 @@ export default connect(
   },
   dispatch => ( {...bindActionCreators(actions, dispatch)} )
 )(ReviewForm)
-
-// && arr[ind].poster_path !== undefined
-
-// recommended: true,
-// movie_name: 'LA LA LAND',
-// movie_img: 'http://t2.gstatic.com/images?q=tbn:ANd9GcRhFtgdSYQ89vUMjMJal2D8H39qBCkh9ptCEoZEsafOzkeQPTu2',
-// review_text: 'Loved this movie great new take on Musicals!',
-// spoiler: true,
-// stars: 5,

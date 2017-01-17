@@ -6,32 +6,75 @@ const initialState = {
          recommended: true,
          movie_name: 'Arrival',
          movie_img: 'http://cdn3-www.comingsoon.net/assets/uploads/gallery/arrival/arrivalposter.jpg',
+         overview: "Taking place after alien crafts land around the world, an expert linguist is recruited by the military to determine whether they come in peace or are a threat.",
          review_text: 'I likey dis movie sooo goooooood! Mind blowing ending',
          spoiler: false,
          stars: 5,
          toggleReview: false,
+         recommendedBy: [
+                         {
+                           friend_name: 'Senor Juan',
+                           friend_img: 'https://randomuser.me/api/portraits/men/77.jpg',
+                         },
+                         {
+                           friend_name: 'Marty Mcfly',
+                           friend_img: 'https://randomuser.me/api/portraits/men/68.jpg',
+                         },
+                         {
+                           friend_name: 'Carla',
+                           friend_img: 'https://randomuser.me/api/portraits/women/68.jpg',
+                         }
+                        ]
       },
       {
-         friend_name: 'Marty Mcfly',
-         friend_img: 'https://randomuser.me/api/portraits/men/68.jpg',
          recommended: true,
          movie_name: 'Hell or High Water',
          movie_img: 'http://t1.gstatic.com/images?q=tbn:ANd9GcRYPGO1eXsOXccVk-YmuR5XBUsr9Cjf7PrrAdc-KngRAptlynNl',
+         overview: "Taking place after alien crafts land around the world, an expert linguist is recruited by the military to determine whether they come in peace or are a threat.",
+         vote_average: 7,
          review_text: 'Da bomb.com oh Yeah watchy watchy!',
          spoiler: false,
          stars: 4,
          toggleReview: false,
+         recommendedBy: [
+                         {
+                           friend_name: 'Senor Juan',
+                           friend_img: 'https://randomuser.me/api/portraits/men/77.jpg',
+                         },
+                         {
+                           friend_name: 'Marty Mcfly',
+                           friend_img: 'https://randomuser.me/api/portraits/men/68.jpg',
+                         },
+                         {
+                           friend_name: 'Carla',
+                           friend_img: 'https://randomuser.me/api/portraits/women/68.jpg',
+                         }
+                        ]
       },
       {
-         friend_name: 'Carla',
-         friend_img: 'https://randomuser.me/api/portraits/women/68.jpg',
-         recommended: true,
          movie_name: 'LA LA LAND',
          movie_img: 'http://t2.gstatic.com/images?q=tbn:ANd9GcRhFtgdSYQ89vUMjMJal2D8H39qBCkh9ptCEoZEsafOzkeQPTu2',
-         review_text: 'Loved this movie great new take on Musicals!',
-         spoiler: true,
+         overview: "Mia, an aspiring actress, serves lattes to movie stars in between auditions and Sebastian, a jazz musician, scrapes by playing cocktail party gigs in dingy bars, but as success mounts they are faced with decisions that begin to fray the fragile fabric of their love affair, and the dreams they worked so hard to maintain in each other threaten to rip them apart.",
+         vote_average: 6.2,
          stars: 5,
          toggleReview: false,
+         recommendedBy: [
+                         {
+                           friend_name: 'Senor Juan',
+                           friend_img: 'https://randomuser.me/api/portraits/men/77.jpg',
+                         },
+                         {
+                           friend_name: 'Marty Mcfly',
+                           friend_img: 'https://randomuser.me/api/portraits/men/68.jpg',
+                         },
+                         {
+                           recommended: true,
+                           friend_name: 'Carla',
+                           friend_img: 'https://randomuser.me/api/portraits/women/68.jpg',
+                           review_text: 'Loved this movie great new take on Musicals!',
+                           spoiler: true,
+                         }
+                        ]
       },
    ],
    movie: [{
