@@ -10,8 +10,9 @@
   //  margin: 20px;
  }
  .movies{
-    display: flex;
-    flex-direction: row;
+   display: flex;
+   flex-direction: row;
+   overflow-x: scroll;
    .movie{
       margin: 5px;
    }

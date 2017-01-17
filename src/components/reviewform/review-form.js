@@ -11,10 +11,16 @@ class ReviewForm extends React.Component {
  constructor(){
   super()
   this.state = {
-    nada: '',
-    dataSource: []
+    dataSource: [],
+    movieSelection: null,
   }
  }
+
+handleMovieClick(ind){
+  const arr = []
+  arr.push(this.props.Reviews.movie[ind])
+  this.setState({ movieSelection: arr})
+}
 
 render() {
  const movie_arr = this.props.Reviews.movie.filter( (e,ind,arr)=>{
@@ -22,7 +28,7 @@ render() {
     return arr[ind]
    } else {}
  } )
- console.log(movie_arr)
+ console.log(this.state.movieSelection)
  return(
   <div className="form-wrapper">
     <TextField
@@ -31,21 +37,27 @@ render() {
        dataSource={this.state.dataSource}
        onUpdateInput={this.handleUpdateInput}
        fullWidth={true}
-       onChange={ (e,newValue)=>{ this.props.searchApi(newValue,console.log(this.props))} }
+       onChange={ (e,newValue)=>{ this.props.searchApi(newValue) } }
      />
      <div className="movies">
        {
-         movie_arr.map( (obj)=>{
+         movie_arr.map( (obj,ind)=>{
            return(
            <img className="movie"
                 key={obj.id}
                 alt=''
-                src={`https://image.tmdb.org/t/p/w154//${obj.poster_path}`}/>
+                src={`https://image.tmdb.org/t/p/w154//${obj.poster_path}`}
+                onClick={ (e)=>{console.log(e.target.index),this.handleMovieClick(ind)} }
+                />
            )
          })
         }
      </div>
-     <Link to="/add2"><RaisedButton className="next" fullWidth={true} label="Next" /></Link>
+     {
+       this.state.movieSelection !== null ?
+     <Link to="/add2"> <RaisedButton className="next" fullWidth={true} label="Next" /> </Link> :
+      ''
+     }
   </div>
  )
 }
