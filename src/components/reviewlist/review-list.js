@@ -60,9 +60,9 @@ handleTrim(string){
         dummie.map((obj, index) => {
            return(
             <div key={ index } className="review">
-               <div className="col-div">
+               <div className="col-container">
 
-                  <div className="col">
+                  <div className="col one">
                      <div className="movie-container">
                         <img className="movie-img" alt="" src={ obj.movie_img }/>
                      </div>
@@ -74,6 +74,16 @@ handleTrim(string){
                      <div className="rank-cont">{ icons.star() }<p>{ obj.vote_average }</p> </div>
                   </div>
 
+                </div>
+                <div className="recommendation-cont">
+                {
+                  obj.recommendedBy.map( (obj, index)=>{
+                    return(
+                       <img src={obj.friend_img}/>
+
+                    )
+                  })
+                }
                 </div>
               </div>
             )

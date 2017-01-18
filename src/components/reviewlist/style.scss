@@ -11,7 +11,7 @@
   background: #121212;
   margin: 10px 0px;
   color:#ffffff;
-  .col-div{
+  .col-container{
    display: flex;
    align-items: center;
    justify-content: center;
@@ -23,7 +23,7 @@
    }
 
    .col p{
-    font-size: 12px;
+    font-size: 13px;
    }
 
    .movie-container{
@@ -63,16 +63,14 @@
 
     .rank-cont{
       margin: 5px 0px;
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
       svg{
-        display: inline-block;
-        line-height: 30px;
-        white-space: nowrap;
+
       }
       p{
-        display: inline-block;
-        margin-left: 5px;
-        line-height: 30px;
-        white-space: nowrap;
+
       }
     }
 
@@ -104,6 +102,17 @@
    width: 320px;
    height: 30px;
    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+ }
+
+ .recommendation-cont{
+   margin: 10px;
+   display: flex;
+   flex-direction: row;
+    img{
+      width: 22px;
+      height: 22px;
+      margin: 5px 5px 5px 10px;
+    }
  }
 
  .add-btn{
