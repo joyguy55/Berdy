@@ -15,3 +15,10 @@ export function searchApi(searchParam){
       })
    }
 }
+
+export function setLocation(location){
+  return {
+    type: 'SET_LOCATION',
+    location,
+  }
+}

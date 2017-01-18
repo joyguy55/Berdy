@@ -6,10 +6,10 @@ import Router from 'react-router/BrowserRouter'
 import Match from 'react-router/Match'
 import Link from 'react-router/Link'
 
-import ReviewList from './reviewlist/review-list.js'
+import MainDisplay from './display/main.js'
 import ReviewForm from './reviewform/review-form.js'
 
-import * as actions from '../redux/actions/location-reducer.js'
+import * as actions from '../redux/actions/actions.js'
 import * as icons from './resources/svg.js'
 
 const AppIndex = (props) => {
@@ -25,7 +25,7 @@ const AppIndex = (props) => {
          </ul>
        </div>
 
-      <Match exactly pattern="/" component={ReviewList} />
+      <Match exactly pattern="/" component={MainDisplay} />
       <Match pattern="/add" component={ReviewForm} />
     </div>
    </Router>

@@ -2,15 +2,15 @@
 .review-box{
  background: #181818;
  max-width: 320px;
- margin-left: 54px;
- position: absolute;
  height: 100%;
+
  .review{
   display: flex;
   flex-direction: column;
   background: #121212;
   margin: 10px 0px;
   color:#ffffff;
+
   .col-container{
    display: flex;
    align-items: center;
@@ -26,16 +26,18 @@
     font-size: 13px;
    }
 
-   .movie-container{
-    // border-radius: 50%;
-    overflow: hidden;
-    // height: 50px;
-    // width: 50px;
-    margin: 15px 5px;
+   h5{
+     margin: 15px 0px;
    }
+
+   .movie-container{
+    overflow: hidden;
+    margin: 5px 5px;
+   }
+
    .movie-img{
-    height: 115px;
-    width: 76px;
+    height: 160px;
+    width: 110px;
    }
 
    .two{
@@ -66,20 +68,22 @@
       display: flex;
       flex-direction: row;
       align-items: baseline;
-      svg{
-
-      }
-      p{
-
-      }
     }
 
+   } // two
+
+   .options-btn-cont{
+     display: flex;
+     flex-direction: row;
+     .opt-btn{
+     border: 1px solid #ffffff;
+     padding: 3px 7px 2px 7px;
+     border-radius: 3%;
+     margin: 5px;
+    }
    }
 
-   .material-icons{
-    font-size: 18px;
-   }
-  } // col-div
+ } // col-container
 
   .star-container{
    margin: 0px 0px 10px 20px;

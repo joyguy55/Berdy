@@ -1,7 +1,7 @@
 const initialLocation = { pathname: '/', search: '', hash: '' }
-const locationReducer = (state = initialLocation, action) => {
+const LocationReducer = (state = initialLocation, action) => {
   return action.type === 'LOCATION_CHANGE' ?
     action.location : state
 }
 
-export default locationReducer
+export default LocationReducer

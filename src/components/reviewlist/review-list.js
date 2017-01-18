@@ -2,7 +2,7 @@ import React from 'react'
 import './style.scss'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as actions from '../../redux/actions/review-action.js'
+import * as actions from '../../redux/actions/actions.js'
 import RaisedButton from 'material-ui/RaisedButton'
 import { Link } from 'react-router'
 import * as icons from '../resources/svg.js'
@@ -52,8 +52,7 @@ handleTrim(string){
 }
 
  render(){
-    const dummie = this.props.Reviews.reviews
-    console.log(dummie)
+  const dummie = this.props.Reviews.reviews
   return(
     <div className="review-box" >
       {
@@ -72,6 +71,11 @@ handleTrim(string){
                      <h5 className="movie-name" >{ obj.movie_name }</h5>
                      <p className="overview" >{ this.handleTrim(obj.overview) }...</p>
                      <div className="rank-cont">{ icons.star() }<p>{ obj.vote_average }</p> </div>
+                    <div className="options-btn-cont">
+                      <div className="opt-btn"> { icons.watchlist() } </div>
+                      <div className="opt-btn"> { icons.classic() } </div>
+                      <div className="opt-btn"> { icons.rate() } </div>
+                    </div>
                   </div>
 
                 </div>
@@ -79,7 +83,7 @@ handleTrim(string){
                 {
                   obj.recommendedBy.map( (obj, index)=>{
                     return(
-                       <img src={obj.friend_img}/>
+                       <img key={index} alt="" src={obj.friend_img}/>
 
                     )
                   })
@@ -89,7 +93,6 @@ handleTrim(string){
             )
         })
       }
-      <Link to="/add"> <RaisedButton className="add-btn" backgroundColor="#00E676" label="Add Review"/> </Link>
     </div>
   )}
 
