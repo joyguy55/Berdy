@@ -19,12 +19,6 @@ const AppIndex = (props) => {
     onChange={ location => props.setLocation(location) }
    >
    <div>
-       <div className="sidebar-container">
-         <ul>
-            <li><Link to="/">{ icons.menu() }</Link></li>
-         </ul>
-       </div>
-
       <Match exactly pattern="/" component={MainDisplay} />
       <Match pattern="/add" component={ReviewForm} />
     </div>

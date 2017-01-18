@@ -1,8 +1,8 @@
 .component-cont{
  display: flex;
  flex-direction: row;
- margin-left: 55px;
  height: 100%;
+
   .main-cont{
    display: flex;
    flex-direction: row;
@@ -11,6 +11,17 @@
    color: #ffffff;
   .description{
     margin: 20px 40px;
+  }
+
+  .options-btn-cont{
+    display: flex;
+    flex-direction: row;
+    .opt-btn{
+    border: 1px solid #ffffff;
+    padding: 3px 7px 2px 7px;
+    border-radius: 3%;
+    margin: 5px;
+   }
   }
 
   } // main-cont

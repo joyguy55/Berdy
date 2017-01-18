@@ -3,7 +3,9 @@ import './style.scss'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../../redux/actions/actions.js'
+import * as icons from '../resources/svg.js'
 
+import SideBar from '../sidebar.js'
 import ReviewList from '../reviewlist/review-list.js'
 
 class MainDisplay extends React.Component {
@@ -20,6 +22,8 @@ class MainDisplay extends React.Component {
   const movie = this.props.Movies.movie[0]
   return(
     <div className="component-cont">
+
+    <SideBar/>
 
        <div className="main-cont">
 
@@ -39,6 +43,13 @@ class MainDisplay extends React.Component {
 
           <p>Overview</p>
           <p>{ movie.overview }</p>
+
+          <div className="options-btn-cont">
+            <div className="opt-btn"> { icons.watchlist() } </div>
+            <div className="opt-btn"> { icons.classic() } </div>
+            <div className="opt-btn"> { icons.rate() } </div>
+          </div>
+
         </div>
 
        </div>
