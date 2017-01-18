@@ -40,9 +40,11 @@
 
    .two{
     width: 150px;
+    .overview{
+      margin: 5px 0px;
+    }
     .movie-name{
-     float: left;
-     margin: 0px 0px 12px 0px;
+
     }
     .bottom{
      float: left;
@@ -58,6 +60,22 @@
      display: inline-block;
      margin: 5px 0px 0px 20px;
     }
+
+    .rank-cont{
+      margin: 5px 0px;
+      svg{
+        display: inline-block;
+        line-height: 30px;
+        white-space: nowrap;
+      }
+      p{
+        display: inline-block;
+        margin-left: 5px;
+        line-height: 30px;
+        white-space: nowrap;
+      }
+    }
+
    }
 
    .material-icons{

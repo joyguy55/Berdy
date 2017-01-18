@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import * as actions from '../../redux/actions/review-action.js'
 import RaisedButton from 'material-ui/RaisedButton'
 import { Link } from 'react-router'
+import * as icons from '../resources/svg.js'
 
 class ReviewList extends React.Component{
  constructor() {
@@ -45,10 +46,14 @@ handleToggle(index){
    }
 }
 
+handleTrim(string){
+  const newstring = string.substring(0, 65)
+  return newstring
+}
+
  render(){
     const dummie = this.props.Reviews.reviews
-    const movie =  this.props.Reviews.movies
-    console.log(movie)
+    console.log(dummie)
   return(
     <div className="review-box" >
       {
@@ -65,8 +70,8 @@ handleToggle(index){
 
                   <div className="col two">
                      <h5 className="movie-name" >{ obj.movie_name }</h5>
-                     <p>{ obj.movie_name }</p>
-                     <p>{ obj.movie_name }</p>
+                     <p className="overview" >{ this.handleTrim(obj.overview) }...</p>
+                     <div className="rank-cont">{ icons.star() }<p>{ obj.vote_average }</p> </div>
                   </div>
 
                 </div>

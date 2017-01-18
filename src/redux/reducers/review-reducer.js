@@ -1,53 +1,58 @@
 const initialState = {
  reviews:[
       {
-         friend_name: 'Senor Juan',
-         friend_img: 'https://randomuser.me/api/portraits/men/77.jpg',
-         recommended: true,
          movie_name: 'Arrival',
          movie_img: 'http://cdn3-www.comingsoon.net/assets/uploads/gallery/arrival/arrivalposter.jpg',
          overview: "Taking place after alien crafts land around the world, an expert linguist is recruited by the military to determine whether they come in peace or are a threat.",
-         review_text: 'I likey dis movie sooo goooooood! Mind blowing ending',
-         spoiler: false,
+         vote_average: 6.5,
          stars: 5,
          toggleReview: false,
          recommendedBy: [
                          {
                            friend_name: 'Senor Juan',
                            friend_img: 'https://randomuser.me/api/portraits/men/77.jpg',
+                           review_text: 'I likey dis movie sooo goooooood! Mind blowing ending',
+                           spoiler: false,
                          },
                          {
                            friend_name: 'Marty Mcfly',
                            friend_img: 'https://randomuser.me/api/portraits/men/68.jpg',
+                           review_text: 'Da bomb.com oh Yeah watchy watchy!',
+                           spoiler: false,
                          },
                          {
                            friend_name: 'Carla',
                            friend_img: 'https://randomuser.me/api/portraits/women/68.jpg',
+                           review_text: 'Loved this movie great new take on Musicals!',
+                           spoiler: false,
                          }
                         ]
       },
       {
-         recommended: true,
          movie_name: 'Hell or High Water',
          movie_img: 'http://t1.gstatic.com/images?q=tbn:ANd9GcRYPGO1eXsOXccVk-YmuR5XBUsr9Cjf7PrrAdc-KngRAptlynNl',
          overview: "Taking place after alien crafts land around the world, an expert linguist is recruited by the military to determine whether they come in peace or are a threat.",
          vote_average: 7,
-         review_text: 'Da bomb.com oh Yeah watchy watchy!',
-         spoiler: false,
          stars: 4,
          toggleReview: false,
          recommendedBy: [
                          {
                            friend_name: 'Senor Juan',
                            friend_img: 'https://randomuser.me/api/portraits/men/77.jpg',
+                           review_text: 'I likey dis movie sooo goooooood! Mind blowing ending',
+                           spoiler: false,
                          },
                          {
                            friend_name: 'Marty Mcfly',
                            friend_img: 'https://randomuser.me/api/portraits/men/68.jpg',
+                           review_text: 'Da bomb.com oh Yeah watchy watchy!',
+                           spoiler: false,
                          },
                          {
                            friend_name: 'Carla',
                            friend_img: 'https://randomuser.me/api/portraits/women/68.jpg',
+                           review_text: 'Loved this movie great new take on Musicals!',
+                           spoiler: false,
                          }
                         ]
       },
@@ -62,17 +67,20 @@ const initialState = {
                          {
                            friend_name: 'Senor Juan',
                            friend_img: 'https://randomuser.me/api/portraits/men/77.jpg',
+                           review_text: 'I likey dis movie sooo goooooood! Mind blowing ending',
+                           spoiler: false,
                          },
                          {
                            friend_name: 'Marty Mcfly',
                            friend_img: 'https://randomuser.me/api/portraits/men/68.jpg',
+                           review_text: 'Da bomb.com oh Yeah watchy watchy!',
+                           spoiler: false,
                          },
                          {
-                           recommended: true,
                            friend_name: 'Carla',
                            friend_img: 'https://randomuser.me/api/portraits/women/68.jpg',
                            review_text: 'Loved this movie great new take on Musicals!',
-                           spoiler: true,
+                           spoiler: false,
                          }
                         ]
       },
