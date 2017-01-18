@@ -1,27 +1,40 @@
 import React from 'react'
 import './style.scss'
-import { syncHistoryWithStore } from 'react-router-redux'
-import { Router, Route, browserHistory } from 'react-router'
-import Review from './reviewlist/review.js'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import Router from 'react-router/BrowserRouter'
+import Match from 'react-router/Match'
+import Link from 'react-router/Link'
+
+import ReviewList from './reviewlist/review-list.js'
 import ReviewForm from './reviewform/review-form.js'
-import ReviewFormSub from './reviewform/review-form-sub.js'
-import SideBar from './navigation.js'
 
-import store from '../redux/store.js'
+import * as actions from '../redux/actions/location-reducer.js'
+import * as icons from './resources/svg.js'
 
-const history = syncHistoryWithStore(browserHistory, store)
-
-const Index = (props) => {
+const AppIndex = (props) => {
  return(
-   <div className="index">
-      <SideBar />
-      <Router history={history}>
-        <Route path="/" component={Review}></Route>
-        <Route path="/add" component={ReviewForm}></Route>
-        <Route path="/add2" component={ReviewFormSub}></Route>
-      </Router>
-   </div>
+   <Router
+    location={ window.location }
+    onChange={ location => props.setLocation(location) }
+   >
+   <div>
+       <div className="sidebar-container">
+         <ul>
+            <li><Link to="/">{ icons.menu() }</Link></li>
+         </ul>
+       </div>
+
+      <Match exactly pattern="/" component={ReviewList} />
+      <Match pattern="/add" component={ReviewForm} />
+    </div>
+   </Router>
  )
 }
 
-export default Index
+export default connect(
+   function mapStateToProps(store){
+      return store
+   },
+   dispatch => ( {...bindActionCreators(actions, dispatch)} )
+)(AppIndex)

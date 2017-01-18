@@ -29,7 +29,7 @@ render() {
     return arr[ind]
    } else {}
  } )
- console.log(movie_arr)
+
  return(
   <div className="form-wrapper">
     <TextField

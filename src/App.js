@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './App.css'
+import './App.scss'
 import { Provider } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import Index from './components/index.js'
+import AppIndex from './components/index.js'
 
 import store from './redux/store.js'
 
@@ -11,11 +11,11 @@ class App extends Component {
     return (
      <MuiThemeProvider>
         <Provider store={store}>
-          <Index/>
+          <AppIndex/>
         </Provider>
       </MuiThemeProvider>
     )
   }
 }
 
-export default App;
+export default App

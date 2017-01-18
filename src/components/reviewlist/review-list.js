@@ -1,13 +1,12 @@
 import React from 'react'
 import './style.scss'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as actions from '../../redux/actions/review-action.js'
-import { bindActionCreators } from 'redux'
-import ReviewText from './review-text.js'
 import RaisedButton from 'material-ui/RaisedButton'
 import { Link } from 'react-router'
 
-class Review extends React.Component{
+class ReviewList extends React.Component{
  constructor() {
    super()
    this.state = {
@@ -104,4 +103,4 @@ export default connect(
      return store
   },
   dispatch => ( {...bindActionCreators(actions, dispatch)} )
-)(Review)
+)(ReviewList)
