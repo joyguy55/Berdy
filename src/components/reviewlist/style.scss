@@ -1,8 +1,9 @@
 
 .review-box{
- background: #181818;
+ background: #121212;
  max-width: 320px;
  height: 100%;
+ margin-top: 55px;
 
  .review{
   display: flex;
@@ -10,6 +11,7 @@
   background: #121212;
   margin: 10px 0px;
   color:#ffffff;
+  padding: 10px;
 
   .col-container{
    display: flex;
@@ -33,15 +35,31 @@
    .movie-container{
     overflow: hidden;
     margin: 5px 5px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    &:hover{
+      transform: scale(1.025);
+      border: 1px solid white;
+      margin: 0px 4px 0px 4px;
+    }
    }
 
    .movie-img{
-    height: 160px;
-    width: 110px;
+    height: 108px;
+    width: 75px;
    }
 
    .two{
     width: 150px;
+
+    .head{
+      display: inline-flex;
+      align-items: center;
+      h5{
+        margin-bottom: 0px;
+      }
+    }
     .overview{
       margin: 5px 0px;
     }
@@ -64,10 +82,16 @@
     }
 
     .rank-cont{
-      margin: 5px 0px;
+      // margin: 5px 0px 5px 15px;
       display: flex;
       flex-direction: row;
-      align-items: baseline;
+      align-items: center;
+      p{
+        font-size: 15px;
+      }
+      svg{
+        margin-left: 10px
+      }
     }
 
    } // two
@@ -109,9 +133,9 @@
  }
 
  .recommendation-cont{
-   margin: 10px;
    display: flex;
    flex-direction: row;
+   margin: 12px 10px 5px 10px;
     img{
       width: 22px;
       height: 22px;

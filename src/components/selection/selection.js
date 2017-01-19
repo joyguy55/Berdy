@@ -2,32 +2,36 @@ import React from 'react'
 import './style.scss'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as actions from '../../redux/actions/actions.js'
+import * as actions from '../../api/actions/actions.js'
 import * as icons from '../resources/svg.js'
 
-import SideBar from '../sidebar.js'
-import ReviewList from '../reviewlist/review-list.js'
+import CreateReview from './create-review.js'
 
-class MainDisplay extends React.Component {
+class Selection extends React.Component {
  constructor(){
   super()
   this.state = {
     dataSource: [],
     movieSelection: null,
+    openReview: false,
   }
+}
+
+ handleOpen(){
+   console.log('fired', this.state.openReview)
+   this.setState({openReview: true})
+ }
+
+ handleClose(){
+   this.setState({openReview: false})
  }
 
  render(){
-  console.log(this.props.Movies)
   const movie = this.props.Movies.movie[0]
   return(
-    <div className="component-cont">
+     <div className="main-cont">
 
-    <SideBar/>
-
-       <div className="main-cont">
-
-         <div><img alt="" src={ movie.poster_path }/></div>
+       <div><img alt="" src={ `https://image.tmdb.org/t/p/w300//${movie.poster_path}` }/></div>
 
         <div className="description">
 
@@ -37,24 +41,18 @@ class MainDisplay extends React.Component {
             <div className="rating">{ movie.vote_average }</div>
           </div>
 
-          <div className="btn-wrapper">
-
-          </div>
-
           <p>Overview</p>
           <p>{ movie.overview }</p>
 
           <div className="options-btn-cont">
-            <div className="opt-btn"> { icons.watchlist() } </div>
-            <div className="opt-btn"> { icons.classic() } </div>
-            <div className="opt-btn"> { icons.rate() } </div>
+            <div className="opt-btn" >{ icons.watchlist() }</div>
+            <div className="opt-btn" >{ icons.classic() }</div>
+            <div className="opt-btn" onClick={ () => { this.handleOpen() } } >{ icons.rate() }</div>
           </div>
 
         </div>
 
-       </div>
-
-     <ReviewList/>
+        <CreateReview open={ this.state.openReview } close={this.handleClose.bind(this) } />
 
     </div>
   )
@@ -62,9 +60,12 @@ class MainDisplay extends React.Component {
 
 }
 
+//{ this.state.movieSelection ? <CreateReview open={ this.state.openReview }/> : null }
+
+
 export default connect(
   function mapStateToProps(store){
      return store
   },
   dispatch => ( {...bindActionCreators(actions, dispatch)} )
-)(MainDisplay)
+)(Selection)

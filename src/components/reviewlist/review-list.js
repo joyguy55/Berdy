@@ -2,9 +2,8 @@ import React from 'react'
 import './style.scss'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as actions from '../../redux/actions/actions.js'
-import RaisedButton from 'material-ui/RaisedButton'
-import { Link } from 'react-router'
+import * as actions from '../../api/actions/actions.js'
+//import RaisedButton from 'material-ui/RaisedButton'
 import * as icons from '../resources/svg.js'
 
 class ReviewList extends React.Component{
@@ -51,8 +50,13 @@ handleTrim(string){
   return newstring
 }
 
+handleDisplay(obj){
+  this.props.setMovie(obj.movie_name)
+}
+
  render(){
   const dummie = this.props.Reviews.reviews
+  console.log(dummie, this.props)
   return(
     <div className="review-box" >
       {
@@ -63,19 +67,20 @@ handleTrim(string){
 
                   <div className="col one">
                      <div className="movie-container">
-                        <img className="movie-img" alt="" src={ obj.movie_img }/>
+                        <img className="movie-img"
+                             alt=""
+                             onClick={ () => { this.handleDisplay(obj) } }
+                             src={ obj.movie_img }/>
                      </div>
                   </div>
 
                   <div className="col two">
-                     <h5 className="movie-name" >{ obj.movie_name }</h5>
-                     <p className="overview" >{ this.handleTrim(obj.overview) }...</p>
-                     <div className="rank-cont">{ icons.star() }<p>{ obj.vote_average }</p> </div>
-                    <div className="options-btn-cont">
-                      <div className="opt-btn"> { icons.watchlist() } </div>
-                      <div className="opt-btn"> { icons.classic() } </div>
-                      <div className="opt-btn"> { icons.rate() } </div>
-                    </div>
+                     <div className="head">
+                        <h5 className="movie-name" >{ obj.movie_name }</h5>
+                     </div>
+                     <div className="rank-cont">
+                     <p>{ obj.vote_average }</p> { icons.star() }
+                     </div>
                   </div>
 
                 </div>
@@ -84,7 +89,6 @@ handleTrim(string){
                   obj.recommendedBy.map( (obj, index)=>{
                     return(
                        <img key={index} alt="" src={obj.friend_img}/>
-
                     )
                   })
                 }
@@ -115,6 +119,8 @@ handleTrim(string){
 //      )
 //   })
 // }
+
+// <p className="overview" >{ this.handleTrim(obj.overview) }...</p>
 
 export default connect(
   function mapStateToProps(store){

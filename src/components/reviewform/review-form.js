@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router'
 import './style.scss'
-import * as actions from '../../redux/actions/actions.js'
+import * as actions from '../../api/actions/actions.js'
 
 class ReviewForm extends React.Component {
  constructor(){
