@@ -2,6 +2,7 @@ import React from 'react'
 import './style.scss'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 import * as actions from '../../api/actions/actions.js'
 //import RaisedButton from 'material-ui/RaisedButton'
 import * as icons from '../resources/svg.js'
@@ -56,7 +57,6 @@ handleDisplay(obj){
 
  render(){
   const dummie = this.props.Reviews.reviews
-  console.log(dummie, this.props)
   return(
     <div className="review-box" >
       {
@@ -67,10 +67,10 @@ handleDisplay(obj){
 
                   <div className="col one">
                      <div className="movie-container">
-                        <img className="movie-img"
+                        <Link to="/"> <img className="movie-img"
                              alt=""
                              onClick={ () => { this.handleDisplay(obj) } }
-                             src={ obj.movie_img }/>
+                             src={ obj.movie_img }/> </Link>
                      </div>
                   </div>
 

@@ -4,6 +4,10 @@ import reducer from './reducers/root'
 
 const store = createStore(reducer, applyMiddleware(thunk))
 
-console.log(store.getState())
+// console.log(store.getState())
+
+store.subscribe( ()=> {
+ console.log("store changed", store.getState())
+})
 
 export default store

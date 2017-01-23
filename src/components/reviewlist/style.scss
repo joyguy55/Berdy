@@ -1,151 +1,162 @@
-
-.review-box{
- background: #121212;
- max-width: 320px;
- height: 100%;
- margin-top: 55px;
-
- .review{
-  display: flex;
-  flex-direction: column;
+.review-box {
   background: #121212;
-  margin: 10px 0px;
-  color:#ffffff;
-  padding: 10px;
+  height: 800px;
+  margin-top: 55px;
+  overflow: auto;
+  overflow-x: hidden;
 
-  .col-container{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: row;
-   justify-content: flex-start;
+  .review {
+    display: flex;
+    flex-direction: column;
+    background: #121212;
+    width: 320px;
+    margin: 10px 0;
+    color: #ffffff;
+    padding: 10px 10px;
 
-   .col{
-    margin: 0px 15px;
-   }
-
-   .col p{
-    font-size: 13px;
-   }
-
-   h5{
-     margin: 15px 0px;
-   }
-
-   .movie-container{
-    overflow: hidden;
-    margin: 5px 5px;
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    &:hover{
-      transform: scale(1.025);
-      border: 1px solid white;
-      margin: 0px 4px 0px 4px;
-    }
-   }
-
-   .movie-img{
-    height: 108px;
-    width: 75px;
-   }
-
-   .two{
-    width: 150px;
-
-    .head{
-      display: inline-flex;
-      align-items: center;
-      h5{
-        margin-bottom: 0px;
-      }
-    }
-    .overview{
-      margin: 5px 0px;
-    }
-    .movie-name{
-
-    }
-    .bottom{
-     float: left;
-     display: flex;
-    }
-    .friend-circle{
-     border-radius: 50%;
-     height: 20px;
-     width: 20px;
-     display: inline-block;
-    }
-    .friend-name{
-     display: inline-block;
-     margin: 5px 0px 0px 20px;
-    }
-
-    .rank-cont{
-      // margin: 5px 0px 5px 15px;
+    .col-container {
       display: flex;
-      flex-direction: row;
       align-items: center;
-      p{
-        font-size: 15px;
+      justify-content: center;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      .col {
+        margin: 0 15px;
       }
-      svg{
-        margin-left: 10px
+
+      .col p {
+        font-size: 13px;
+      }
+
+      h5 {
+        margin: 15px 0;
+      }
+
+      .movie-container {
+        overflow: hidden;
+        margin: 5px;
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+
+        &:hover {
+          transform: scale(1.035);
+          border: 1px solid white;
+          margin: 4px;
+        }
+      }
+
+      .movie-img {
+        height: 108px;
+        width: 75px;
+      }
+
+      .two {
+        width: 150px;
+
+        .head {
+          display: inline-flex;
+          align-items: center;
+
+          h5 {
+            margin-bottom: 0;
+          }
+        }
+
+        .overview {
+          margin: 5px 0;
+        }
+
+        .movie-name {}
+
+        .bottom {
+          float: left;
+          display: flex;
+        }
+
+        .friend-circle {
+          border-radius: 50%;
+          height: 20px;
+          width: 20px;
+          display: inline-block;
+        }
+
+        .friend-name {
+          display: inline-block;
+          margin: 5px 0 0 20px;
+        }
+
+        .rank-cont {
+          // margin: 5px 0px 5px 15px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          p {
+            font-size: 15px;
+          }
+
+          svg {
+            margin-left: 10px;
+          }
+        }
+      }
+      // two
+
+      .options-btn-cont {
+        display: flex;
+        flex-direction: row;
+
+        .opt-btn {
+          border: 1px solid #ffffff;
+          padding: 3px 7px 2px;
+          border-radius: 3%;
+          margin: 5px;
+        }
       }
     }
+    // col-container
 
-   } // two
+    .star-container {
+      margin: 0 0 10px 20px;
 
-   .options-btn-cont{
-     display: flex;
-     flex-direction: row;
-     .opt-btn{
-     border: 1px solid #ffffff;
-     padding: 3px 7px 2px 7px;
-     border-radius: 3%;
-     margin: 5px;
+      .stars {
+        float: left;
+        width: 25px;
+        font-size: 19px;
+      }
+
+      .toggler {
+        float: right;
+        margin-right: 23px;
+      }
     }
-   }
-
- } // col-container
-
-  .star-container{
-   margin: 0px 0px 10px 20px;
-   .stars{
-    float: left;
-    width: 25px;
-    font-size: 19px;
-   }
-   .toggler{
-     float: right;
-     margin-right: 23px;
-   }
   }
- } // review
+  // review
 
- .create-review-btn{
-   text-align: center;
-   padding: auto;
-   padding-top: 10px;
-   width: 320px;
-   height: 30px;
-   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
- }
+  .create-review-btn {
+    text-align: center;
+    padding: 10px auto auto;
+    width: 320px;
+    height: 30px;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0;
+  }
 
- .recommendation-cont{
-   display: flex;
-   flex-direction: row;
-   margin: 12px 10px 5px 10px;
-    img{
+  .recommendation-cont {
+    display: flex;
+    flex-direction: row;
+    margin: 12px 10px 5px;
+
+    img {
       width: 22px;
       height: 22px;
       margin: 5px 5px 5px 10px;
     }
- }
+  }
 
- .add-btn{
-    margin: 10px 0px 0px 15px;
- }
-
-
-} // review-box
+  .add-btn {
+    margin: 10px 0 0 15px;
+  }
+}
+// review-box

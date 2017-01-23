@@ -1,10 +1,18 @@
-.main-cont {
+@media ( width: 699px){
+ .selection-cont {
+   display: none;
+  }
+}
+
+.selection-cont {
   display: flex;
   flex-direction: row;
   padding: 50px;
   background: linear-gradient(to bottom right, #181818, #181818);
   color: #ffffff;
   margin-top: 55px;
+  min-width: 700px;
+  max-width: 1000px;
 
   .description {
     margin: 20px 40px;
@@ -24,8 +32,8 @@
         margin-left: 0;
       }
 
-      path:hover {
-        fill: #181818 !important;
+      &:hover path{
+          fill: #181818 !important;
       }
 
       &:hover {
