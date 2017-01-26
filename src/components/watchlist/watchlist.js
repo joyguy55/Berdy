@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux'
 import List from './list.js'
 import * as actions from '../../api/actions/actions.js'
 // import * as icons from '../resources/svg.js'
+import Selection from '../selection/selection.js'
 
 class WatchList extends React.Component {
   constructor() {
@@ -34,6 +35,7 @@ class WatchList extends React.Component {
   render() {
     return (
       <div className="watchlist-cont">
+      <Selection/>
         {this.hasWatchList()}
       </div>
     )

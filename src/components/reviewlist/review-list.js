@@ -67,10 +67,10 @@ handleDisplay(obj){
 
                   <div className="col one">
                      <div className="movie-container">
-                        <Link to="/"> <img className="movie-img"
+                        <img className="movie-img"
                              alt=""
                              onClick={ () => { this.handleDisplay(obj) } }
-                             src={ obj.movie_img }/> </Link>
+                             src={ obj.movie_img }/>
                      </div>
                   </div>
 

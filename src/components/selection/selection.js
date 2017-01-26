@@ -34,7 +34,7 @@ class Selection extends React.Component {
     return (
       <div className="selection-cont">
 
-        <div><img alt="" src={`https://image.tmdb.org/t/p/w300//${movie.poster_path}`}/></div>
+        <div><img alt="" src={`https://image.tmdb.org/t/p/w185//${movie.poster_path}`}/></div>
 
         <div className="description">
 

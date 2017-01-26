@@ -7,6 +7,8 @@ import * as actions from '../api/actions/actions.js'
 
 import TopBar from './topbar.js'
 import SideBar from './sidebar.js'
+import FooterBar from './footerbar.js'
+
 import ReviewList from './reviewlist/review-list.js'
 import Selection from './selection/selection.js'
 import WatchList from './watchlist/watchlist.js'
@@ -23,6 +25,7 @@ class MainDisplay extends React.Component {
           <Match pattern="/watch" component={WatchList}/>
           <ReviewList/>
         </div>
+        <FooterBar/>
       </div>
     )
   }

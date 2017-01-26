@@ -1,13 +1,13 @@
-.watchlist-cont{
-  max-width: 900px;
-  max-height: 1100px;
-  margin-top: 55px;
+.watchlist-cont {
+  max-width: 1000px;
+  max-height: 690px;
   background: #181818;
-  .container{
+
+  .container {
     width: inherit;
-    width: 1000px;
-    min-width: 900px;
-    .no-disp{
+    max-width: 1000px;
+
+    .no-disp {
       border: 1px solid #ffffff;
       margin: auto;
       width: 400px;
@@ -15,18 +15,18 @@
       color: #ffffff;
     }
   }
-
 }
 
-.list{
-  .img-cont{
+.list {
+  .img-cont {
     width: 45px;
     height: 45px;
     margin: 1px;
     overflow: hidden;
     border-radius: 2px;
-  img{
-    height: 70px
+
+    img {
+      height: 70px;
+    }
   }
- }
 }
